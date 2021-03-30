@@ -2,15 +2,14 @@
 Python ddos attack
 
 ### istifade qaydasi
-
 * oncelikle sagdan releases-den source-code-lari yukleyin
 * zip fayli cixarin
 ---
 * cmd ve ya terminal acilir
 * `ddos.py` faylinin oldugu directory acilir
 * cmd ve ya terminal-a asagidaki command daxil edilir:
-python ddos.py `www.example.com`
+python ddos.py
+* terminalda fayl acilir ve sayt yazilir:
 ---
-* qeyd: `www.example.com` yerine istenilen domain qeyd edilir.
-* qeyd: 22-ci setirden "40" ededini deyiserek hucum sayini artira bilersiniz.
-* qeyd: 9 ve 10-cu setirlerden HTTP basliqlarina duzelisler ede bilersiniz. 
+* qeyd: 18-ci setirden "40" ededini deyiserek hucum sayini artira bilersiniz.
+* qeyd: 5 ve 6-ci setirlerden HTTP basliqlarina duzelisler ede bilersiniz. 
